@@ -10,9 +10,9 @@ const Home = () => {
     <>
     {/* // Hero Section */}
 <Navbar style='text-white' logo='logo' btnStyle={'bg-[#FFFFFF4D] w-[165px] h-[57px] rounded-full'}/>
-    <section className='w-full h-[982px]   flex  flex-col md:flex-row -mt-16 z-10 '>
+    <section className='w-full h-[982px]    flex  flex-col md:flex-row -mt-16 z-10 '>
       {/* Col1  */}
-      <div className=' flex flex-col md:w-[50%] gap-10 h-full   justify-end items-start bg-[#212529] pt-60 lg:pt-0 px-10 lg:px-20 pb-12'>
+      <div className=' flex flex-col md:w-[50%] gap-10 h-full justify-end items-start  bg-[#212529]  pt-60 lg:pt-0 px-10 lg:px-20 pb-12'>
         <h1 className='w-[292px] h-[154px] text-[64px]    text-white font-400 '>Redefining
         Energy</h1>
         <p className='max-w-[535px] text-white pt-10 text-18 font-400'>
