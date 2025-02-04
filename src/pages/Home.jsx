@@ -4,15 +4,16 @@ import Button from '../Component/button/Button'
 import SectionBtn from '../Component/SectionBtn/SectionBtn'
 import Footer from '../Component/footer/Footer'
 import Navbar from '../Component/header/Navbar'
+import { NavLink } from 'react-router-dom'
 
 const Home = () => {
   return (
     <>
     {/* // Hero Section */}
 <Navbar style='text-white' logo='logo' btnStyle={'bg-[#FFFFFF4D] w-[165px] h-[57px] rounded-full'}/>
-    <section className='w-full h-[982px]    flex  flex-col md:flex-row -mt-16 z-10 '>
+    <section className='w-full md:h-[982px]  bg-black  flex  flex-col md:flex-row -mt-16 z-10 '>
       {/* Col1  */}
-      <div className=' flex flex-col md:w-[50%] gap-10 h-full justify-end items-start  bg-[#212529]  pt-60 lg:pt-0 px-10 lg:px-20 pb-12'>
+      <div className=' flex flex-col  md:w-[50%] gap-10 h-full justify-end items-start  bg-[#212529]  pt-96 lg:pt-0 px-10 lg:px-20 pb-12'>
         <h1 className='w-[292px] h-[154px] text-[64px]    text-white font-400 '>Redefining
         Energy</h1>
         <p className='max-w-[535px] text-white pt-10 text-18 font-400'>
@@ -31,7 +32,7 @@ const Home = () => {
 
     {/* // Section 1 */}
 
-    <section className=' flex flex-col w-full h-auto md:gap-10 px-10 lg:px-20 pt-[100%] md:pt-36 overflow-x-hidden  text-black '>
+    <section className=' flex flex-col w-full h-auto md:gap-10 px-10 lg:px-20  pt-36 overflow-x-hidden  text-black '>
       <div className='flex flex-col gap-10'>
       <h2 className='text-heading40 font-400 text-HeadingClr'>Areas of Expertise</h2>
       <p className='max-w-[757px] text-18 font-400 text-ParaClr'>Whether for small or large-scale projects, we are committed to delivering cutting-edge results, contributing to a more sustainable and innovative energy future.</p>
@@ -83,7 +84,7 @@ const Home = () => {
     <section className='flex flex-col gap-10 px-10 lg:px-20  py-20 font-400'>
     <h2 className='text-HeadingClr text-heading40 '>Get in touch with us</h2>
     <p className='text-ParaClr text-18 max-w-[787px]'>If you're ready to explore how our expertise in energy efficiency, LED lighting, photovoltaic energy, and electric mobility can benefit your projects, don't hesitate to reach out. We're here to listen, collaborate, and provide you with tailored solutions that align with your specific needs and goals.</p>
-    <SectionBtn>Contact us</SectionBtn>
+    <NavLink to={'/contact'}><SectionBtn>Contact us</SectionBtn></NavLink>
     </section>
 <Footer/>
 

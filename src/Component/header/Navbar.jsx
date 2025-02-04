@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {Link, NavLink} from 'react-router-dom'
 import Button from '../button/Button'
 const Navbar = ({style ,logo ,btnStyle}) => {
+  let [mobileMenuIcon ,setMobileMenuIcon]=useState(true)
+
+  let handleMobileNavIcon=()=>{
+    setMobileMenuIcon(!mobileMenuIcon)
+  }
   return (
 <>
     {/* // HEADER */}
@@ -20,16 +25,29 @@ const Navbar = ({style ,logo ,btnStyle}) => {
                 <NavLink to={'/contact'}><Button style={ `${btnStyle}`}>Contact Us</Button></NavLink>
             </ul>    
         </nav>
-        <img src="../Img/header/menu.svg" alt="menu"  className='w-10 hidden'/>
-        <img src="../Img/header/cross.svg" alt="menu" className='w-10 hidden' />
+        {
+          logo == 'logoblack' ?(
+            <>
+            <img src="../Img/header/menu.svg" alt="menu"  className={`${mobileMenuIcon ? 'block' : 'hidden'} w-10  lg:hidden`} onClick={handleMobileNavIcon}/>
+            <img src="../Img/header/cross.svg" alt="menu" className={`${mobileMenuIcon  ? 'hidden' : 'block'} stroke-white fill-white  w-10 lg:hidden`}  onClick={handleMobileNavIcon}/>
+          </>
+          ): (
+            <>
+   <img src="../Img/header/menuwhite.svg" alt="" className={`${mobileMenuIcon? 'block' : 'hidden'} w-10   lg:hidden`}  onClick={handleMobileNavIcon} />
+   <img src="../Img/header/crosswhite.svg" alt="" className={`${mobileMenuIcon  ? 'hidden' : 'block'}  w-10  lg:hidden`}  onClick={handleMobileNavIcon} />
+            </>
+          )
+        }
+     
+     
     </header>
 
     {/* // Mobile Nav */}
-    <nav className={`${style}  flex-col  hidden`}>
+    <nav className={`${style} ${mobileMenuIcon ? 'hidden' :'flex' }  flex-col  lg:hidden  w-[100vw] -ml-10 `}>
             <ul className={` flex flex-col justify-center items-center text-18 gap-5`} >
                <NavLink to={'/about'}> <li className='cursor-pointer '> About Us</li></NavLink>
                <NavLink to={'/services'}> <li className='cursor-pointer'> Services</li></NavLink>
-               <NavLink to={'/portfolio'}> <li className='cursor-pointer'> Portfolio</li></NavLink>
+               <NavLink to={'/portfolio'}> <li className='cursor-pointer '> Portfolio</li></NavLink>
                 <NavLink to={'/contact'}><Button style={ `${btnStyle}`}>Contact Us</Button></NavLink>
             </ul>    
         </nav>
@@ -39,3 +57,5 @@ const Navbar = ({style ,logo ,btnStyle}) => {
 }
 
 export default Navbar
+
+

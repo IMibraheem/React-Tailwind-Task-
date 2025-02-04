@@ -201,8 +201,12 @@ const Portfolio = () => {
       <Navbar style='text-white' logo='logo' btnStyle={'bg-[#FFFFFF4D] w-[165px] h-[57px] text-white rounded-full'} />
       
       {/* Hero Sec */}
-      <section className='w-full relative -mt-16'>
-        <img src="../Img/Portfolio/portfolioSec.svg" alt="Portfolio Image" className='w-full' />
+      <section className='w-full h-[80vh]  relative -mt-16'>
+        <img src="../Img/Portfolio/portfolio.png" alt="Portfolio Image" className='w-full h-[100%]  absolute object-cover' />
+        <div className='relative h-full  flex flex-col justify-end items-start px-10 lg:px-20  pb-20'>
+        <h2 className='text-[64px] font-400 text-[#FFFFFF]'>Portfolio</h2>
+        <p className='text-18 font-400 text-[#FFFFFF] max-w-[535px]'>Learn more about Oakland C.E. and our commitment to excellence, innovation, and sustainability.</p>
+        </div>
       </section>
 
       {/* Section 1 */}
